@@ -1,6 +1,17 @@
+let acc = 0
 radio.setGroup(1)
+radio.setFrequencyBand(42)
 input.setAccelerometerRange(AcceleratorRange.EightG)
+let accThreshold = 1100
+let sendUntil = control.millis() + 2000
 basic.forever(function () {
-    radio.sendString("iss/onAcc " + input.acceleration(Dimension.Strength))
-    control.waitMicros(20000)
+    acc = input.acceleration(Dimension.Strength)
+    if (acc >= accThreshold || sendUntil > control.millis()) {
+        if (acc >= accThreshold) {
+            sendUntil = control.millis() + 2000
+        }
+        radio.sendString("iss/onAcc " + acc)
+        control.waitMicros(20000)
+        serial.writeLine("" + (acc))
+    }
 })
