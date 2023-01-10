@@ -1,6 +1,6 @@
 let acc = 0
 radio.setGroup(1)
-radio.setFrequencyBand(42)
+radio.setFrequencyBand(70)
 input.setAccelerometerRange(AcceleratorRange.EightG)
 let accThreshold = 1100
 let sendUntil = control.millis() + 2000
