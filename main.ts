@@ -2,7 +2,7 @@ let acc = 0
 radio.setGroup(1)
 radio.setFrequencyBand(70)
 input.setAccelerometerRange(AcceleratorRange.EightG)
-let accThreshold = 1100
+let accThreshold = 1200
 let sendUntil = control.millis() + 2000
 basic.forever(function () {
     acc = input.acceleration(Dimension.Strength)
