@@ -1,4 +1,5 @@
 let acc = 0
+led.plot(0, 0)
 radio.setGroup(1)
 radio.setFrequencyBand(70)
 input.setAccelerometerRange(AcceleratorRange.EightG)
