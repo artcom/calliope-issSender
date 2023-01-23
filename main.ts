@@ -16,3 +16,6 @@ basic.forever(function () {
         serial.writeLine("" + (acc))
     }
 })
+loops.everyInterval(3600000, function () {
+    radio.sendString("iss/vcc " + pins.analogReadPinInternalRef())
+})
