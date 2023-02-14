@@ -13,7 +13,6 @@ basic.forever(function () {
         }
         radio.sendString("iss/onAcc " + acc)
         control.waitMicros(20000)
-        serial.writeLine("" + (acc))
     }
 })
 loops.everyInterval(1200000, function () {
